@@ -274,8 +274,12 @@ a {
     font-size: 1rem; } }
 
 .site-footer {
+  padding: 0 6rem;
+  max-width: 64rem;
   padding-top: 2rem;
   margin-top: 2rem;
+  margin-left: auto;
+  margin-right: auto;
   border-top: solid 1px #eff0f1; }
 
 .site-footer-owner {
