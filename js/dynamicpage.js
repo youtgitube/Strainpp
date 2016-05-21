@@ -10,8 +10,10 @@ $(function() {
     baseHeight = $pageWrap.height() - $mainContent.height();
 
     $("nav").delegate("a", "click", function() {
-        window.location.hash = $(this).attr("href");
-        return false;
+        if ($(this).attr("href") != "javascript:void(0);") {
+            window.location.hash = $(this).attr("href");
+            return false;
+        }
     });
 
     $(window).bind('hashchange', function(){
