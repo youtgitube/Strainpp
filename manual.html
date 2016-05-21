@@ -5,7 +5,14 @@
     <title>Strain++ | Manual</title>
 
     <script>
-      document.addEventListener("touchstart", function(){}, true);
+      function fix()
+      {
+          var el = this;
+          var par = el.parentNode;
+          var next = el.nextSibling;
+          par.removeChild(el);
+          setTimeout(function() {par.insertBefore(el, next);}, 0)
+      }
     </script>
 
     <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
@@ -37,16 +44,16 @@
       <h2 class="project-tagline">Measure strain in TEM images</h2>
     </div>
 
-    <a href="https://github.com/JJPPeters/Strainpp" class="btn">Source</a>
-      <a href="https://github.com/JJPPeters/Strainpp/releases/download/v1.1a/Install_Strain.exe" class="btn">Installer (Win x64)</a>
+    <a href="https://github.com/JJPPeters/Strainpp" class="btn" ontouchend="this.onclick=fix">Source</a>
+      <a href="https://github.com/JJPPeters/Strainpp/releases/download/v1.1a/Install_Strain.exe" class="btn" ontouchend="this.onclick=fix">Installer (Win x64)</a>
     </section>
 <nav>
 <ul class="topnav">
-  <li><a href="index.html" onclick="closeMenu()">About</a></li>
-  <li><a href="manual.html" onclick="closeMenu()">Manual</a></li>
-  <li><a href="theory.html" onclick="closeMenu()">Theory</a></li>
+  <li><a href="index.html" onclick="closeMenu()" ontouchend="this.onclick=fix">About</a></li>
+  <li><a href="manual.html" onclick="closeMenu()" ontouchend="this.onclick=fix">Manual</a></li>
+  <li><a href="theory.html" onclick="closeMenu()" ontouchend="this.onclick=fix">Theory</a></li>
   <li class="icon">
-    <a href="javascript:void(0);" onclick="toggleMenu()">&#9776;</a>
+    <a href="javascript:void(0);" onclick="toggleMenu()" ontouchend="this.onclick=fix">&#9776;</a>
   </li>
 </ul>
 </nav>
