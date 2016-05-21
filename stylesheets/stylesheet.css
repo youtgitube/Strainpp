@@ -274,7 +274,6 @@ a {
     font-size: 1rem; } }
 
 .site-footer {
-  padding: 0 6rem;
   max-width: 64rem;
   padding-top: 2rem;
   margin-top: 2rem;
@@ -291,15 +290,18 @@ a {
 
 @media screen and (min-width: 64em) {
   .site-footer {
-    font-size: 1rem; } }
+    font-size: 1rem;
+    padding: 0 6rem;} }
 
 @media screen and (min-width: 42em) and (max-width: 64em) {
   .site-footer {
-    font-size: 1rem; } }
+    font-size: 1rem;
+    padding: 2rem 4rem;} }
 
 @media screen and (max-width: 42em) {
   .site-footer {
-    font-size: 0.9rem; } }
+    font-size: 0.9rem;
+    padding: 2rem 1rem;} }
 
 ul.topnav {
     list-style-type: none;
