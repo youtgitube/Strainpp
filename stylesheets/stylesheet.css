@@ -388,3 +388,20 @@ ul.topnav li.icon {display: none;}
   text-align:      center;
   font-size:       1em;
 }
+
+.figure {
+  display: block;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 64em) {
+  .figure {
+    width: 70%; } }
+
+@media screen and (min-width: 42em) and (max-width: 64em) {
+  .figure {
+    width: 80%; } }
+
+@media screen and (max-width: 42em) {
+  .figure {
+    width: 90%; } }
