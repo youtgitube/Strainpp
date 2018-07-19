@@ -1,92 +1,156 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html lang="en-US">
   <head>
     <meta charset="UTF-8">
-    <title>Strain++ | Manual</title>
+        <meta name="theme-color" content="#6A9D1A">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link rel="stylesheet" href="/Strainpp/assets/css/style.css">
 
-    <script>
-      if (!("ontouchstart" in document.documentElement)) {
-      document.documentElement.className += " no-touch";
-      }
+        <!-- no clue what I am doing here... -->
+        <script>
+                if (!("ontouchstart" in document.documentElement)) {
+                document.documentElement.className += " no-touch";
+                }
+        </script>
+        <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=TeX-MML-AM_CHTML' async></script>
+        <script src="/Strainpp/assets/js/navbar.js"></script>
+
+      </head>
+  <body style="overflow-y: scroll;">
+
+    <script type="text/javascript">
+            watchForHover();
     </script>
 
-    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
-    <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
-    <script type='text/javascript' src='js/dynamicpage.js'></script>
+        <div id="page-wrap">
 
-    <script src="js/navbar.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.js"></script>
+                <section class="page-header">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.5.1/katex.min.css">
-  </head>
-  <body>
-
-<div id="page-wrap">
-
-    <section class="page-header">
-
-    <div class="header-layout" style="text-align: center;">
-      <img src="images/logo.png" class="project-logo">
-    </div>
-
-    <div class="header-layout">
-      <h1 class="project-name">Strain++</h1><br/>
-      <h2 class="project-tagline">Measure strain in TEM images</h2>
-    </div>
-
-    <a href="https://github.com/JJPPeters/Strainpp" class="btn">Source</a>
-      <a href="https://github.com/JJPPeters/Strainpp/releases/download/v1.4/Install_Strain.exe" class="btn">Installer (Win x64)</a>
-    </section>
+                        <div class="header-layout" style="text-align: center;">
+                          <img src="/Strainpp/assets/logo.svg" class="project-logo">
+                        </div>
+                    
+                        <div class="header-layout">
+                          <h1 class="project-name">Strain++</h1><br/>
+                          <h2 class="project-tagline">Measure strain in TEM images</h2>
+                        </div>
+                    
+                        <a href="https://github.com/JJPPeters/Strainpp" class="btn">Source</a>
+                        <a href="https://github.com/JJPPeters/Strainpp/releases/download/v1.4/Install_Strain.exe" class="btn">v1.4 installer (Win x64)</a>
+                        </section>
 <nav>
-<ul class="topnav">
-  <li><a href="index.html" onclick="closeMenu()">About</a></li>
-  <li><a href="manual.html" onclick="closeMenu()">Manual</a></li>
-  <li><a href="theory.html" onclick="closeMenu()">Theory</a></li>
-  <li class="icon">
-    <a href="javascript:void(0);" onclick="toggleMenu()"><img src="images/navicon.svg" alt="" style="height: 1em; width: 1em;"></a>
-  </li>
-</ul>
+<div class="topnav">
+
+        <!-- this menu generation stuff is from  https://gist.github.com/pdarragh/c7ca120604c1a1d8b8de -->
+
+        
+        
+        
+        <a href="/Strainpp/" onclick="closeMenu()">Home</a>
+        
+
+        
+        
+        
+        <a href="/Strainpp/manual" onclick="closeMenu()">Manual</a>
+        
+
+        
+        
+        
+        <a href="/Strainpp/theory" onclick="closeMenu()">Theory</a>
+        
+
+        
+
+  <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">&#9776;</a>
+
+</div>
 </nav>
 
-<section id="centre-content" class="main-content">
-<div id="guts">
-<h3><a id="manual" class="anchor" href="#manual" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Manual</h3>
-<img src="images/manual/1_overview.png" alt="" class="figure">
-<p>This is the window that will greet you upon opening Strain++. There is not much here yet so you should open an image. This can be done through the <em>File</em> menu or through the shortcut <em>Ctrl+O</em>. The supported file types are .dm3, .dm4 or .tif (non-RGB).</p>
+</div>
 
-<img src="images/manual/2_images.png" alt="" class="figure">
-<p>Now you can see your image and its Fourier transform (FFT). Select <em>GPA</em> from the <em>Strain</em> menu to start measuring the strain in your image.</p>
+<main id="centre-content" class="main-content" role="main">
 
-<img src="images/manual/3_gvector.png" alt="" class="figure">
-<p>Strain++ now needs to know what mask size to use when masking off individual g-vectors. Here the dotted line is Strain++'s estimation of the smallest g-vector and the solid line is the mask size. If you do not like the calculated mask size, you can enter in a size manually or by choosing the smallest lattice vector on the FFT. Once you are happy, click yes to accept the mask size.</p>
+     <h1 id="manual">Manual</h1>
 
-<img src="images/manual/4_phase.png" alt="" class="figure">
+<div class="image-figure">
+    <img style="width:70%;" src="/Strainpp/assets/images/1_overview.png" alt="Strain++ interface" />
+    <p>
+        <span class="figure-title">Figure</span> Screenshot of the default Strain++ interface.
+    </p>
+</div>
+
+<p>Above shows the window that will greet you upon opening Strain++. There is not much here yet so you should open an image. This can be done through the <code class="highlighter-rouge">File</code> menu or through the shortcut <code class="highlighter-rouge">Ctrl+O</code>. The supported file types are .dm3, .dm4 or .tif (non-RGB).</p>
+
+<div class="image-figure">
+    <img style="width:70%;" src="/Strainpp/assets/images/2_images.png" alt="Strain++ interface" />
+    <p>
+        <span class="figure-title">Figure</span> After opening a file, the image is dispayed on the left and the FFT on the right.
+    </p>
+</div>
+
+<p>Now you can see your image and its Fourier transform (FFT). Select the <code>Strain &rarr; GPA</code> menu to start measuring the strain in your image.</p>
+
+<div class="image-figure">
+    <img style="width:70%;" src="/Strainpp/assets/images/3_gvector.png" alt="Strain++ interface" />
+    <p>
+        <span class="figure-title">Figure</span> Dialog to select mask mask size.
+    </p>
+</div>
+
+<p>Strain++ now needs to know what mask size to use when masking off individual g-vectors. Here the dotted line is Strain++’s estimation of the smallest g-vector and the solid line is the mask size. If you do not like the calculated mask size, you can enter in a size manually or by choosing the smallest lattice vector on the FFT. Once you are happy, click yes to accept the mask size.</p>
+
+<div class="image-figure">
+    <img style="width:70%;" src="/Strainpp/assets/images/4_phase.png" alt="Strain++ interface" />
+    <p>
+        <span class="figure-title">Figure</span> Dialog to refine the g-vector.
+    </p>
+</div>
+
 <p>You now need to click on the first g-vector you want to use in the analysis. The corresponding phase image will be shown in place of the image. If you want to refine the g-vector, select yes.</p>
 
-<img src="images/manual/5_refine.png" alt="" class="figure">
+<div class="image-figure">
+    <img style="width:70%;" src="/Strainpp/assets/images/5_refine.png" alt="Strain++ interface" />
+    <p>
+        <span class="figure-title">Figure</span> Selecting an area to refine the phase with.
+    </p>
+</div>
+
 <p>You need to select an area to refine from, click twice to define the two corners of the refinement area.</p>
 
-<img src="images/manual/6_refined.png" alt="" class="figure">
+<div class="image-figure">
+    <img style="width:70%;" src="/Strainpp/assets/images/6_refined.png" alt="Strain++ interface" />
+    <p>
+        <span class="figure-title">Figure</span> Dialog confirming refinement.
+    </p>
+</div>
+
 <p>You now have the option to refine again or continue to the next g-vector. The process for the second g-vector is exactly the same as the first</p>
 
-<img src="images/manual/7_strain.png" alt="" class="figure">
-<p>You will now be shown the output of the GPA. Here you can choose the exact output, basis rotation or select the colours. On the <em>Other</em> tab the intermediate steps can be displayed. Right clicking on an image will give options for exporting it, or data can be exported en masse from the <em>File</em> menu.</p>
+<div class="image-figure">
+    <img style="width:70%;" src="/Strainpp/assets/images/7_strain.png" alt="Strain++ interface" />
+    <p>
+        <span class="figure-title">Figure</span> Output distortions.
+    </p>
 </div>
 
-</section>
+<p>You will now be shown the output of the GPA. Here you can choose the exact output, basis rotation or select the colours. On the <code class="highlighter-rouge">Other</code> tab the intermediate steps can be displayed. Right clicking on an image will give options for exporting it, or data can be exported en masse from the <code class="highlighter-rouge">File</code> menu.</p>
 
-  <footer class="site-footer">
-    <span class="site-footer-owner"><a href="https://github.com/JJPPeters/Strainpp">Strain++</a> is maintained by <a href="https://github.com/JJPPeters">Jon Peters</a>.</span>
 
-    <span class="site-footer-credits">This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a> and modified by <a href="https://github.com/JJPPeters">Jon Peters</a>.</span>
-  </footer>
+</main>
 
-</div>
+<footer class="site-footer">
+        <span class="site-footer-owner"><a href="https://github.com/JJPPeters/Strainpp">Strain++</a> is maintained by <a href="https://github.com/JJPPeters">Jon Peters</a>.</span>
+    
+        <span class="site-footer-credits">This page was is based off the <a href="https://github.com/jasonlong/cayman-theme">Cayman theme</a> by <a href="https://twitter.com/jasonlong">Jason Long</a> and modified by <a href="https://github.com/JJPPeters">Jon Peters</a>.</span>
+      </footer>
 
+     <script type="text/javascript">
+        watchForResize()
+        colorTaps()
+      </script>
   </body>
 </html>
